@@ -1,0 +1,4 @@
+# SIMULATED incident: too little evidence to name a cause (system should say so)
+2026-05-01T09:00:00Z INFO frontend log: page load normal
+2026-05-01T09:12:00Z WARN api-gateway log: slow response observed on /search
+2026-05-01T09:30:00Z INFO frontend resolved: user reports stopped

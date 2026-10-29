@@ -1,0 +1,6 @@
+timestamp,source_type,service,severity,message,event_type,trace_id,source_reference
+2026-10-28T10:28:00Z,deployment,payment-service,info,Version pay-2.8.1 deployed,deployment,,
+2026-10-28T10:30:00Z,change,payment-service,warning,database.max_connections changed from 20 to 5,configuration_change,,deploy-audit.csv:2
+2026-10-28T10:32:00Z,log,payment-service,error,Database connection timeout while acquiring connection,database_timeout,trace-example-1,payment.log:125
+2026-10-28T10:33:00Z,metric,payment-service,error,Payment error rate reached 18 percent,error_rate_anomaly,,
+2026-10-28T10:33:15Z,trace,payment-service,error,checkout database.query failed after 2400 ms,slow_span,trace-example-1,

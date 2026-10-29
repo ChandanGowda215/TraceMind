@@ -1,0 +1,36 @@
+.welcome-page{overflow-x:hidden}
+.welcome-page>header,.welcome-page>main,.welcome-page>footer{opacity:0;visibility:hidden;transition:opacity .45s ease}
+.welcome-page.is-loaded>header,.welcome-page.is-loaded>main,.welcome-page.is-loaded>footer{opacity:1;visibility:visible}
+.welcome-loader{position:fixed;inset:0;z-index:10000;display:grid;place-items:center;background:radial-gradient(ellipse at 50% 45%,#161328 0,#090b14 48%,#05070c 100%);color:#edf1fa;transition:opacity .4s ease,visibility .4s ease}
+.welcome-loader.done{opacity:0;visibility:hidden;pointer-events:none}
+.welcome-loader-content{width:min(280px,calc(100vw - 48px));display:flex;flex-direction:column;align-items:center;font:12px/1.5 "DM Mono",Consolas,monospace;letter-spacing:.08em;text-transform:uppercase}
+.welcome-loader-label{margin-bottom:13px;color:#a6aec2}
+.welcome-loader-track{width:100%;height:3px;overflow:hidden;border-radius:5px;background:#202a3a}
+.welcome-loader-track span{display:block;width:0;height:100%;background:linear-gradient(90deg,#7458ea,#64d9ea);transition:width .12s linear}
+.welcome-loader-percent{margin-top:10px;color:#edf1fa;font-size:13px}
+.hero-sphere{position:absolute;inset:0;width:100%;height:100%;z-index:2;display:block;touch-action:pan-y;cursor:grab;outline:none}
+.hero-sphere:active{cursor:grabbing}
+.hero-sphere:focus-visible{outline:2px solid #aa91ff;outline-offset:-8px;border-radius:18px}
+.sphere-fallback{display:none;position:absolute;inset:0;place-items:center;text-align:center;padding:30px;color:#c2b9ff;font:11px/2 "DM Mono",Consolas,monospace;letter-spacing:.1em}
+.hero-art.sphere-unavailable .hero-sphere{display:none}
+.hero-art.sphere-unavailable .sphere-fallback{display:grid}
+.brand-mark img{display:block;width:100%;height:100%;border-radius:inherit;object-fit:cover;background:#fff}
+.welcome-loader-logo{display:block;width:72px;height:72px;object-fit:cover;border-radius:18px;background:#fff;margin-bottom:24px;box-shadow:0 12px 40px #0007}
+.float-card{z-index:4;transition:transform .35s ease,border-color .35s ease,box-shadow .35s ease}
+.float-card:hover{transform:translateY(-3px);border-color:#6b5ba477;box-shadow:0 20px 46px #05070cb0,0 0 28px #8069f322}
+
+.page-transition{position:fixed;inset:0;z-index:9999;display:grid;place-items:center;overflow:hidden;background:radial-gradient(ellipse at 50% 45%,#161328 0,#090b14 48%,#05070c 100%);opacity:0;animation:transition-arrive .24s ease forwards}
+.page-transition-mark{position:relative;width:140px;height:140px;border:1px solid #aa91ff35;border-radius:50%;box-shadow:0 0 45px #8f70ed29,inset 0 0 35px #8f70ed18;animation:transition-pulse 1.5s ease-in-out infinite}
+.page-transition-mark:before,.page-transition-mark:after{content:"";position:absolute;inset:16px;border:1px solid #64d9ea46;border-radius:50%;animation:transition-spin 3s linear infinite}
+.page-transition-mark:after{inset:31px;border-color:#aa91ff80;animation-direction:reverse;animation-duration:2.2s}
+.page-transition-core{position:absolute;inset:39px;width:62px;height:62px;border-radius:15px;object-fit:cover;background:#fff;box-shadow:0 0 35px #947aff66}
+.page-transition-label{position:absolute;top:calc(50% + 94px);color:#a6aec2;font:11px/1.5 "DM Mono",Consolas,monospace;letter-spacing:.17em;text-transform:uppercase}
+.page-transition-dot{position:absolute;width:5px;height:5px;border-radius:50%;background:#a990ff;box-shadow:0 0 14px #a990ff;animation:transition-orbit 2.4s linear infinite}
+.page-transition-dot:nth-child(2){animation-delay:-.8s;background:#64d9ea}
+.page-transition-dot:nth-child(3){animation-delay:-1.6s}
+@keyframes transition-arrive{to{opacity:1}}
+@keyframes transition-pulse{50%{transform:scale(1.07);box-shadow:0 0 75px #8f70ed4d,inset 0 0 45px #8f70ed2b}}
+@keyframes transition-spin{to{transform:rotate(360deg)}}
+@keyframes transition-orbit{from{transform:rotate(0) translateX(76px) rotate(0)}to{transform:rotate(360deg) translateX(76px) rotate(-360deg)}}
+@media(max-width:700px){.hero-art .float-card{transform:scale(.88)}}
+@media(prefers-reduced-motion:reduce){.welcome-loader,.welcome-page>header,.welcome-page>main,.welcome-page>footer,.welcome-loader-track span{transition:none}.float-card,.page-transition-mark,.page-transition-mark:before,.page-transition-mark:after,.page-transition-dot{animation-duration:3s}}

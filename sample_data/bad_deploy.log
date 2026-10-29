@@ -1,0 +1,11 @@
+# SIMULATED incident: order failures right after a faulty release
+2026-03-20T14:00:00Z INFO app metric: cpu=38 mem=55
+2026-03-20T14:01:00Z INFO app deploy: released app v3.0.0 (new order validation)
+2026-03-20T14:02:10Z ERROR app log: NullPointerException in OrderValidator.validate trace_id=t9
+2026-03-20T14:02:12Z ERROR app log: NullPointerException in OrderValidator.validate trace_id=t10
+2026-03-20T14:02:15Z ERROR api-gateway log: 500 from upstream=app trace_id=t9
+2026-03-20T14:02:20Z ERROR app trace: POST /orders failed status=500 trace_id=t9
+2026-03-20T14:03:00Z WARN frontend log: checkout failures increasing
+2026-03-20T14:04:00Z INFO app metric: cpu=41 mem=57
+2026-03-20T14:20:00Z INFO app restart: rolled back to v2.9.3 and restarted
+2026-03-20T14:23:00Z INFO app resolved: error rate back to baseline

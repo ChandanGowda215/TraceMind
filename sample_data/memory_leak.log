@@ -1,0 +1,13 @@
+# SIMULATED incident: application memory exhaustion (old deploy is outside the correlation window)
+2026-04-02T08:00:00Z INFO app deploy: released app v1.8.0 (dependency cleanup)
+2026-04-02T10:30:00Z INFO app metric: cpu=40 mem=71
+2026-04-02T10:45:00Z INFO app metric: cpu=44 mem=82
+2026-04-02T11:00:00Z WARN app metric: cpu=47 mem=89
+2026-04-02T11:10:00Z WARN app log: memory pressure high, GC overhead increasing
+2026-04-02T11:15:00Z INFO app metric: cpu=52 mem=95
+2026-04-02T11:18:00Z ERROR app log: java.lang.OutOfMemoryError: Java heap space
+2026-04-02T11:18:05Z ERROR api-gateway log: 502 bad gateway upstream=app
+2026-04-02T11:18:30Z INFO app restart: container OOM-killed and restarted
+2026-04-02T11:20:00Z WARN frontend log: users seeing errors on orders page
+2026-04-02T11:25:00Z INFO app metric: cpu=36 mem=48
+2026-04-02T11:30:00Z INFO app resolved: service healthy after restart

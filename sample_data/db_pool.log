@@ -1,0 +1,15 @@
+# SIMULATED incident: checkout timeouts caused by database connection pool exhaustion
+2026-03-14T10:00:00Z INFO db metric: cpu=34 mem=58 db_connections=42
+2026-03-14T10:05:00Z INFO app deploy: released app v2.4.1 (minor UI copy change)
+2026-03-14T10:12:00Z INFO db metric: cpu=41 mem=60 db_connections=71
+2026-03-14T10:16:00Z WARN db log: connection pool nearly exhausted active=93/100
+2026-03-14T10:16:30Z INFO db metric: cpu=47 mem=61 db_connections=93
+2026-03-14T10:18:00Z ERROR app log: timeout acquiring connection from pool trace_id=t1
+2026-03-14T10:18:10Z ERROR auth log: too many connections for role auth_user trace_id=t2
+2026-03-14T10:18:20Z ERROR api-gateway log: 504 gateway timeout upstream=app trace_id=t1
+2026-03-14T10:18:30Z ERROR app trace: checkout request failed after 30000ms trace_id=t1
+2026-03-14T10:19:00Z INFO db metric: cpu=52 mem=62 db_connections=100
+2026-03-14T10:25:00Z WARN frontend log: elevated checkout error rate
+2026-03-14T10:31:00Z INFO db config: max_connections raised 100 -> 200 by oncall
+2026-03-14T10:33:00Z INFO db metric: cpu=40 mem=60 db_connections=64
+2026-03-14T10:40:00Z INFO app resolved: error rate back to baseline

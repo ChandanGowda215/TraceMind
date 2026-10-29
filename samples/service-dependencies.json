@@ -1,0 +1,18 @@
+{
+  "records": [
+    {
+      "source_type": "dependency",
+      "service": "checkout-service",
+      "depends_on": "payment-service",
+      "timestamp": "2026-10-28T10:00:00Z",
+      "message": "checkout-service calls payment-service"
+    },
+    {
+      "source_type": "dependency",
+      "service": "payment-service",
+      "depends_on": "database",
+      "timestamp": "2026-10-28T10:00:00Z",
+      "message": "payment-service calls database"
+    }
+  ]
+}

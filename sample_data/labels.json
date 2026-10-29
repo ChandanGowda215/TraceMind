@@ -1,0 +1,6 @@
+{
+ "db_pool":{"name":"Checkout timeouts","file":"db_pool.log","truth":"db_connection_exhaustion","description":"A release happened shortly before errors, but the database was saturated. Tests whether a red herring is outranked."},
+ "bad_deploy":{"name":"Order failures after release","file":"bad_deploy.log","truth":"faulty_deployment","description":"Errors begin one minute after a deployment; rollback resolves them."},
+ "memory_leak":{"name":"App memory exhaustion","file":"memory_leak.log","truth":"memory_pressure","description":"Memory climbs for an hour, then OOM kill. An old deployment is outside the window."},
+ "vague":{"name":"Sparse evidence","file":"vague.log","truth":"unknown","description":"Only one warning. The correct answer is 'insufficient evidence'."}
+}

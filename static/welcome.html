@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Trace Mind — See the why behind every incident</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/styles.css">
+  <link rel="stylesheet" href="/static/landing-motion.css">
+  <script src="https://cdn.jsdelivr.net/npm/three@0.150.1/build/three.min.js" defer></script>
+  <script src="/static/landing-sphere.js" defer></script>
+</head>
+<body class="welcome-page">
+  <div class="welcome-loader" id="welcome-loader" role="status" aria-live="polite">
+    <div class="welcome-loader-content">
+      <img class="welcome-loader-logo" src="/static/tracemind-logo.png" alt="">
+      <span class="welcome-loader-label">Preparing your workspace</span>
+      <span class="welcome-loader-track" aria-hidden="true"><span id="welcome-loader-bar"></span></span>
+      <span class="welcome-loader-percent" id="welcome-loader-percent">0%</span>
+    </div>
+  </div>
+  <header class="landing-nav">
+    <a class="brand" href="/"><span class="brand-mark"><img src="/static/tracemind-logo.png" alt="Trace Mind logo"></span><span>Trace<span class="brand-light"> Mind</span></span></a>
+    <nav><a href="#how">How it works</a><a href="#features">Platform</a><a class="nav-login" href="/login">Sign in</a><a class="button button-primary button-small" href="/signup">Create account</a></nav>
+  </header>
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <div class="eyebrow"><span class="live-dot"></span> EVIDENCE-FIRST INCIDENT RESPONSE</div>
+        <h1>Know what broke.<br><span>Know why.</span></h1>
+        <p class="hero-lede">Turn scattered logs, metrics, traces and changes into a clear, evidence-backed explanation your team can trust.</p>
+        <div class="hero-actions"><a class="button button-primary" href="/signup">Start investigating <span>→</span></a><a class="button button-quiet" href="/login">Sign in</a></div>
+        <div class="hero-proof"><span class="proof-icon">✓</span> Runs locally · No API key required · Your data stays yours</div>
+      </div>
+      <div class="hero-art" aria-label="Animated three-dimensional telemetry visualization">
+        <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div><div class="orbit orbit-three"></div>
+        <canvas class="hero-sphere" role="img" aria-label="Interactive 3D incident intelligence sphere. Move your pointer to rotate and explore log, metric, trace, deployment, root cause, and remediation capabilities." tabindex="0"></canvas>
+        <div class="sphere-fallback" aria-hidden="true">LOGS · METRICS · TRACES · ROOT CAUSE · REMEDIATION</div>
+        <span class="orbit-node node-a"></span><span class="orbit-node node-b"></span><span class="orbit-node node-c"></span>
+      </div>
+      <div class="hero-bottom"><span>OBSERVE</span><b>→</b><span>CORRELATE</span><b>→</b><span>EXPLAIN</span><b>→</b><span>VERIFY</span></div>
+    </section>
+    <section class="feature-strip" id="features">
+      <div><span class="feature-number">01</span><h2>One connected story</h2><p>Bring operational evidence together on a single incident timeline.</p></div>
+      <div><span class="feature-number">02</span><h2>Reason you can inspect</h2><p>See how each signal shapes a ranking—never a black-box answer.</p></div>
+      <div><span class="feature-number">03</span><h2>Honest uncertainty</h2><p>Know what’s missing, what conflicts, and when the cause is unknown.</p></div>
+    </section>
+    <section class="how-section" id="how"><div><div class="eyebrow">BUILT FOR THE MOMENT AFTER RECOVERY</div><h2>From “it’s working again”<br>to “here’s what happened.”</h2></div><a class="button button-outline" href="/signup">Open your workspace →</a></section>
+  </main>
+  <footer class="landing-footer"><span>Trace Mind · AI Incident Investigator</span><span>Local-first, evidence-backed investigations</span></footer>
+  <script src="/static/landing-motion.js" defer></script>
+</body>
+</html>
